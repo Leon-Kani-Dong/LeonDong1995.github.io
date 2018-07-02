@@ -92,7 +92,7 @@ l_d.on("singletap doubletap", function(ev) {
 	     if(ev.type=="tap"){
 		 game.rotate();
 	    }else if(ev.type=="press"){
-		game.rotate();
+		game.fall();
 	    }
 	});
     }
