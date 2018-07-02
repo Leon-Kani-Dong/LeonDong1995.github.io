@@ -35,7 +35,7 @@ var Local=function(){
 	var ld=document.getElementById('next');
 
 // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-var l_d = new Hammer.Manager(leftElement);
+	var l_d = new Hammer.Manager(leftElement,false);
 
 
 // Tap recognizer with minimal 2 taps
@@ -72,14 +72,14 @@ l_d.on("singletap doubletap", function(ev) {
 	    }
 	});
 	l.on("panleft panright tap press",function(ev) {
-	     if(ev.type=="tap"){
+	     if(ev.type=="panleft"){
 		 game.left();
 	    }else if(ev.type=="press"){
 		game.left();
 	    }
 	});
 	r.on("panleft panright tap press",function(ev) {
-	     if(ev.type=="tap"){
+	     if(ev.type=="panright"){
 		 game.right();
 	    }else if(ev.type=="press"){
 		game.right();
