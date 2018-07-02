@@ -32,6 +32,7 @@ var Local=function(){
 	var mc = new Hammer(myElement);
 	var l= new Hammer(leftElement);
 	var r=new Hammer(rightElement);
+	var ld=document.getElementById('next');
 
 // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
 var l_d = new Hammer.Manager(leftElement);
@@ -52,7 +53,10 @@ l_d.get('singletap').requireFailure('doubletap');
 l_d.on("singletap doubletap", function(ev) {
     if (ev.type=="doubletap"){
 	ev.preventDefault();
-	game.left();
+	game.rotate();
+    }else{
+	ev.preventDefault();
+	game.right();
     }
 });
 	// listen to events...
