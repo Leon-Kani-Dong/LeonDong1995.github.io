@@ -56,7 +56,7 @@ l_d.on("singletap doubletap", function(ev) {
 	game.rotate();
     }else{
 	ev.preventDefault();
-	game.right();
+	game.left();
     }
 });
 	// listen to events...
@@ -72,14 +72,14 @@ l_d.on("singletap doubletap", function(ev) {
 	    }
 	});
 	l.on("panleft panright tap press",function(ev) {
-	     if(ev.type=="panleft"){
+	     if(ev.type=="tap"){
 		 game.left();
 	    }else if(ev.type=="press"){
 		game.left();
 	    }
 	});
 	r.on("panleft panright tap press",function(ev) {
-	     if(ev.type=="panright"){
+	     if(ev.type=="tap"){
 		 game.right();
 	    }else if(ev.type=="press"){
 		game.right();
