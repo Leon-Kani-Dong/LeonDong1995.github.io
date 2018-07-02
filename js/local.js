@@ -29,9 +29,11 @@ var Local=function(){
 	var myElement = document.getElementById('game');
 	var leftElement=document.getElementById('left');
 	var rightElement=document.getElementById('right');
+	var rotateElement=document.getElementById('rotate');
 	var mc = new Hammer(myElement);
 	var l= new Hammer(leftElement);
 	var r=new Hammer(rightElement);
+	var ro=new Hammer(rotateElement);
 /*	//var ld=document.getElementById('operate');
 
 // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
@@ -84,6 +86,13 @@ l_d.on("singletap doubletap", function(ev) {
 		 game.right();
 	    }else if(ev.type=="press"){
 		game.right();
+	    }
+	});
+	ro.on("panleft panright tap press",function(ev) {
+	     if(ev.type=="tap"){
+		 game.rotate();
+	    }else if(ev.type=="press"){
+		game.rotate();
 	    }
 	});
     }
