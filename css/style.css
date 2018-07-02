@@ -23,6 +23,34 @@
     top:200px;
     left:500px;
 }
+.operate{
+    width:1000px;
+    height:500px;
+    background-color: #F2FAFF;
+    position: absolute;
+    top:1000px;
+    left:10px;
+    border:1px solid white;
+    
+}
+.left{
+    width:400px;
+    height:200px;
+    background-color: black;
+    position: absolute;
+    top:10px;
+    left:10px;
+    border:1px solid white;
+}
+.right{
+    width:400px;
+    height:200px;
+    background-color: black;
+    position: absolute;
+    top:10px;
+    left:420px;
+    border:1px solid white;
+}
 .none,.current,.done{
     width:40px;
     height:40px;

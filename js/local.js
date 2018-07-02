@@ -7,14 +7,19 @@ var Local=function(){
     var bindKeyEvent=function(){
 	document.onkeydown= function(e){
 	    if(e.keyCode==38){//up
+		e.preventDefault();
 		game.rotate();
-	    }else if(e.keyCode==39){//right 
+	    }else if(e.keyCode==39){//right
+		e.preventDefault();
 		game.right();
 	    }else if(e.keyCode==40){//down
+		e.preventDefault();
 		game.down();
 	    }else if(e.keyCode==37){//left
+		e.preventDefault();
 		game.left();
 	    }else if(e.keyCode=32){//space
+		e.preventDefault();
 		game.fall();
 	    }
 	}
@@ -22,8 +27,11 @@ var Local=function(){
     var bindTouchEvent=function(){
 	
 	var myElement = document.getElementById('game');
+	var leftElement=document.getElementById('left');
+	var rightElement=document.getElementById('right');
 	var mc = new Hammer(myElement);
-
+	var l= new Hammer(leftElement);
+	var r=new Hammer(rightElement);
 	// listen to events...
 	mc.on("panleft panright tap press",function(ev) {
 	    if (ev.type=="panleft" ){
@@ -35,7 +43,21 @@ var Local=function(){
 	    }else if(ev.type=="press"){
 		game.fall();
 	    }
-	}); 
+	});
+	l.on("panleft panright tap press",function(ev) {
+	     if(ev.type=="tap"){
+		 game.left();
+	    }else if(ev.type=="press"){
+		game.left();
+	    }
+	});
+	r.on("panleft panright tap press",function(ev) {
+	     if(ev.type=="tap"){
+		 game.right();
+	    }else if(ev.type=="press"){
+		game.right();
+	    }
+	});
     }
     var move= function(){
 	timeFunc();
