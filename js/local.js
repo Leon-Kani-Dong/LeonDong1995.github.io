@@ -32,10 +32,10 @@ var Local=function(){
 	var mc = new Hammer(myElement);
 	var l= new Hammer(leftElement);
 	var r=new Hammer(rightElement);
-	var ld=document.getElementById('next');
+/*	//var ld=document.getElementById('operate');
 
 // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-	var l_d = new Hammer.Manager(leftElement,false);
+	var l_d = new Hammer.Manager(leftElement);
 
 
 // Tap recognizer with minimal 2 taps
@@ -53,12 +53,13 @@ l_d.get('singletap').requireFailure('doubletap');
 l_d.on("singletap doubletap", function(ev) {
     if (ev.type=="doubletap"){
 	ev.preventDefault();
+	console.log(ev);
 	game.rotate();
     }else{
 	ev.preventDefault();
 	game.left();
     }
-});
+});*/
 	// listen to events...
 	mc.on("panleft panright tap press",function(ev) {
 	    if (ev.type=="panleft" ){

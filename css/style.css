@@ -24,9 +24,9 @@
     left:500px;
 }
 .operate{
-    width:1000px;
+    width:900px;
     height:500px;
-    background-color: #F2FAFF;
+    background-color: white;
     position: absolute;
     top:1000px;
     left:10px;
@@ -36,20 +36,22 @@
 .left{
     width:400px;
     height:200px;
-    background-color: black;
+    background-color:  #F2FAFF;
     position: absolute;
     top:10px;
     left:10px;
     border:1px solid white;
+    touch-action: none;
 }
 .right{
     width:400px;
     height:200px;
-    background-color: black;
+    background-color:  #F2FAFF;
     position: absolute;
     top:10px;
     left:420px;
     border:1px solid white;
+    touch-action: none;
 }
 .none,.current,.done{
     width:40px;
