@@ -1,6 +1,6 @@
 var Local=function(){
     var game;
-    var INTERVAL =200;
+    var INTERVAL =400;
     var timer= null;
     var timeCount=0;
     var time=0;
