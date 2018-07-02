@@ -19,6 +19,24 @@ var Local=function(){
 	    }
 	}
     }
+    var bindTouchEvent=function(){
+	
+	var myElement = document.getElementById('game');
+	var mc = new Hammer(myElement);
+
+	// listen to events...
+	mc.on("panleft panright tap press",function(ev) {
+	    if (ev.type=="panleft" ){
+		game.left();
+	    }else if(ev.type=="panright"){
+		game.right();
+	    }else if(ev.type=="tap"){
+		game.rotate();
+	    }else if(ev.type=="press"){
+		game.fall();
+	    }
+	}); 
+    }
     var move= function(){
 	timeFunc();
 	if (!game.down()){
@@ -62,6 +80,7 @@ var Local=function(){
 	game=new Game();
 	game.init(doms,generateType(),generateDir());
 	bindKeyEvent();
+	bindTouchEvent();
 	game.performNext(generateType(),generateDir());
 	timer=setInterval(move,INTERVAL);
     }
