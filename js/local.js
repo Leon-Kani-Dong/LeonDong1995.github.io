@@ -32,6 +32,29 @@ var Local=function(){
 	var mc = new Hammer(myElement);
 	var l= new Hammer(leftElement);
 	var r=new Hammer(rightElement);
+
+// We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
+var l_d = new Hammer.Manager(leftElement);
+
+
+// Tap recognizer with minimal 2 taps
+l_d.add( new Hammer.Tap({ event: 'doubletap', taps: 2 }) );
+// Single tap recognizer
+l_d.add( new Hammer.Tap({ event: 'singletap' }) );
+
+
+// we want to recognize this simulatenous, so a quadrupletap will be detected even while a tap has been recognized.
+l_d.get('doubletap').recognizeWith('singletap');
+// we only want to trigger a tap, when we don't have detected a doubletap
+l_d.get('singletap').requireFailure('doubletap');
+
+
+l_d.on("singletap doubletap", function(ev) {
+    if (ev.type=="doubletap"){
+	ev.preventDefault();
+	game.left();
+    }
+});
 	// listen to events...
 	mc.on("panleft panright tap press",function(ev) {
 	    if (ev.type=="panleft" ){
