@@ -2,9 +2,10 @@ var Game=function(){
     var gameDiv;
     var nextDiv;
     var timeDiv;
-    var score=0
+    var score=0;
     var scoreDiv;
     var resultDiv;
+    var username;
     var gameData=[
                   [0,0,0,0,0,0,0,0,0,0],
                   [0,0,0,0,0,0,0,0,0,0],
@@ -221,15 +222,16 @@ var Game=function(){
 	scoreDiv.innerHTML=score;
     }
     var gameOver=function(points){
-	resultDiv.innerHTML='game over';
+	resultDiv.innerHTML="game over!"+username;
+	return score;
     }
-    var init=function(doms,type,dir){
+    var init=function(name,doms,type,dir){
         gameDiv=doms.gameDiv;
         nextDiv=doms.nextDiv;
 	timeDiv=doms.timeDiv;
 	scoreDiv=doms.scoreDiv;
 	resultDiv=doms.resultDiv;
-	
+	username=name;
         //cur=SquareFactory.prototype.make(2,2);
         next=SquareFactory.prototype.make(type,dir);
         initDiv(gameDiv,gameData,gameDivs);

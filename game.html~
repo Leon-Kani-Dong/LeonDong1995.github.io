@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta name="viewport" content="user-scalable=no">
+    <title>game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+    <div class="game" id="game"></div>
+    <div class="next" id="next"></div>
+    <div class="info">
+        <div>time: <span id="time">0</span>s</div>
+        <div>score: <span id="score">0</span>points</div>
+	<div> &nbsp</div>
+	<div>Keyboard Instruction:<div>up : transform</div>
+	  <div>left : move left</div>
+	  <div>down : move down </div>
+	  <div>right : move right</div>
+	  <div>space : fall down</div>
+	</div>
+	<div id="gameover"></div>
+	<div id="rating" class="rating"></div>
+    </div>
+    <div class="operate" id="operate">
+      <div class="left" id="left"></div>
+      <div class="right" id="right"></div>
+      <div class="rotate" id="rotate"></div>
+    </div>
+    <script src="js/sharevar.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBCW_-DtANyePEK2c4y5SijTEb_rxwCNdA",
+    authDomain: "kani-game.firebaseapp.com",
+    databaseURL: "https://kani-game.firebaseio.com",
+    projectId: "kani-game",
+    storageBucket: "",
+    messagingSenderId: "218627309401"
+  };
+  firebase.initializeApp(config);
+</script>
+   
+     <script src="js/hammer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/square.js"></script>
+    <script src="js/squareFactory.js"></script>
+    <script src="js/local.js"></script>
+    <script src="js/script.js"></script>
+
+
+<script src="js/users.js"></script>
+
+</body>
+</html>

@@ -68,6 +68,7 @@
     height:40px;
     position:absolute;
     box-sizing:border-box;
+    border-radius: 0.22em;
 }
 
 .none{

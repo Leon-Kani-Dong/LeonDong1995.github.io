@@ -1,0 +1,12 @@
+var localStorage.Example = "Noname";
+var localStorage.Example = "Hello world";
+
+function TellMe()
+{
+    alert(localStorage.Example);
+}
+
+function ChangeVar(n)
+{
+    localStorage.Example =n ;
+}

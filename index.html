@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-     <meta name="viewport" content="user-scalable=no">
     <title>game</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
- 
-    <div class="game" id="game"></div>
-    <div class="next" id="next"></div>
-    <div class="info">
-        <div>time: <span id="time">0</span>s</div>
-        <div>score: <span id="score">0</span>points</div>
-	<div> &nbsp</div>
-	<div>Keyboard Instruction:<div>up : transform</div>
-	  <div>left : move left</div>
-	  <div>down : move down </div>
-	  <div>right : move right</div>
-	  <div>space : fall down</div>
+  </head>
+  <body>
+    	<div>please input name:<input name="username" type="text" id="username" class="username">
+	  <input type="button" value="start" onclick="redict()">
 	</div>
-	<div id="gameover"></div>
-    </div>
-    <div class="operate" id="operate">
-      <div class="left" id="left"></div>
-      <div class="right" id="right"></div>
-      <div class="rotate" id="rotate"></div>
-    </div>
-     <script src="js/hammer.js"></script>
-    <script src="js/game.js"></script>
-    <script src="js/square.js"></script>
-    <script src="js/squareFactory.js"></script>
-    <script src="js/local.js"></script>
-    <script src="js/script.js"></script>
+	<script>
+	  function redict(){
+	  if(document.getElementById('username').value==""){
+	  location.href='game.html?name=Anonym';
+	  }else{
+	  location.href='game.html?name='+ document.getElementById('username').value;}
+	  }
 
-    
-</body>
+	</script>
+  </body>
 </html>
